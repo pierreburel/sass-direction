@@ -1,0 +1,11 @@
+{
+  "name": "sass-direction",
+  "description": "Sass mixins and functions to help creating bi-directional stylesheets.",
+  "tags": [
+    "sass",
+    "direction",
+    "bidi",
+    "i18n"
+  ],
+  "website": "https://github.com/pierreburel/sass-direction"
+}

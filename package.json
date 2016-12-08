@@ -1,0 +1,21 @@
+{
+  "name": "sass-direction",
+  "version": "1.0.0",
+  "description": "Sass mixins and functions to help creating bi-directional stylesheets.",
+  "keywords": [
+    "sass",
+    "direction",
+    "bidi",
+    "i18n"
+  ],
+  "homepage": "https://github.com/pierreburel/sass-direction",
+  "bugs": {
+    "url": "https://github.com/pierreburel/sass-direction/issues"
+  },
+  "license": "MIT",
+  "author": "Pierre Burel <pierre.burel@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pierreburel/sass-direction.git"
+  }
+}
