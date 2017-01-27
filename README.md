@@ -26,7 +26,85 @@ bower install sass-direction
 
 ## Usage
 
-Coming soon!
+### `app.scss`
+
+```scss
+@import "direction";
+
+h1 {
+  text-align: direction(left);
+  margin-#{direction(right)}: 1em;
+  padding: direction-sides(1em 2em 3em 4em);
+  border: direction-corners(1em 2em 3em 4em);
+  font-size: direction-if(ltr, 1em, 2em);
+  line-height: direction-if(rtl, 2);
+  
+  @include direction-if(ltr) {
+    &::before {
+      content: "left to right";
+    }
+  }
+  
+  @include direction-if(rtl) {
+    &::after {
+      content: "right to left";
+    }
+  }
+}
+```
+
+### `app-rtl.scss`
+
+```scss
+$direction: rtl;
+@import "app";
+```
+
+---
+
+## Result
+
+### `app.css`
+
+```css
+h1 {
+  text-align: left;
+  margin-right: 1em;
+  padding: 1em 2em 3em 4em;
+  border: 1em 2em 3em 4em;
+  font-size: 1em;
+}
+
+h1::before {
+  content: "left to right";
+}
+```
+
+### `app-rtl.css`
+
+```css
+h1 {
+  text-align: right;
+  margin-left: 1em;
+  padding: 1em 4em 3em 2em;
+  border: 2em 1em 4em 3em;
+  font-size: 2em;
+  line-height: 2;
+}
+
+h1::after {
+  content: "right to left";
+}
+```
+
+---
+
+## Aliases
+
+- Function `direction-ltr($if, $else)`: `direction-if(ltr, $if, $else)`
+- Function `direction-rtl($if, $else)`: `direction-if(rtl, $if, $else)`
+- Mixin `direction-ltr`: `direction-if(ltr)`
+- Mixin `direction-rtl`: `direction-if(rtl)`
 
 --- 
 
