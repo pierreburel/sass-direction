@@ -1,6 +1,6 @@
 {
   "name": "sass-direction",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sass mixins and functions to help creating bi-directional stylesheets.",
   "keywords": [
     "sass",
@@ -8,6 +8,17 @@
     "bidi",
     "i18n"
   ],
+  "ignore": [
+    "**/.*",
+    "sache.json",
+    "bower.json"
+  ],
+  "files": [
+    "_direction.scss",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "main": "_direction.scss",
   "homepage": "https://github.com/pierreburel/sass-direction",
   "bugs": {
     "url": "https://github.com/pierreburel/sass-direction/issues"
