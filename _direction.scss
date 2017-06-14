@@ -1,8 +1,20 @@
 $direction: ltr !default;
+$direction-values: (
+  ltr: rtl, 
+  rtl: ltr,
+  left: right,
+  right: left,
+  flex-start: flex-end,
+  flex-end: flex-start,
+  row: row-reverse,
+  row-reverse: row
+) !default;
 
 @function direction($value) {
-  @if $direction == rtl and ($value == left or $value == right) {
-    @return if($value == left, right, left);
+  @if $direction == rtl {
+    @if map-has-key($direction-values, $value) {
+      @return map-get($direction-values, $value);
+    }
   } @else {
     @return $value;
   }

@@ -38,6 +38,8 @@ h1 {
   border: direction-corners(1em 2em 3em 4em);
   font-size: direction-if(ltr, 1em, 2em);
   line-height: direction-if(rtl, 2);
+  flex-direction: direction(row);
+  justify-content: direction(flex-start);
   
   @include direction-if(ltr) {
     &::before {
@@ -49,6 +51,12 @@ h1 {
     &::after {
       content: "right to left";
     }
+  }
+  
+  direction: direction(rtl);
+  
+  & > span {
+    direction: direction(ltr);
   }
 }
 ```
@@ -73,11 +81,17 @@ h1 {
   padding: 1em 2em 3em 4em;
   border: 1em 2em 3em 4em;
   font-size: 1em;
+  flex-direction: row;
+  justify-content: flex-start;
+  direction: rtl;
 }
-
 h1::before {
   content: "left to right";
 }
+h1 > span {
+  direction: ltr;
+}
+
 ```
 
 ### `app-rtl.css`
@@ -90,10 +104,15 @@ h1 {
   border: 2em 1em 4em 3em;
   font-size: 2em;
   line-height: 2;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  direction: ltr;
 }
-
 h1::after {
   content: "right to left";
+}
+h1 > span {
+  direction: rtl;
 }
 ```
 
