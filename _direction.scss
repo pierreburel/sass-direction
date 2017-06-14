@@ -1,19 +1,29 @@
 $direction: ltr !default;
+$direction-values: (
+  ltr: rtl, 
+  rtl: ltr,
+  left: right,
+  right: left,
+  flex-start: flex-end,
+  flex-end: flex-start,
+  row: row-reverse,
+  row-reverse: row
+) !default;
 
 @function direction($value) {
-  @if $direction == rtl and ($value == left or $value == right) {
-    @return if($value == left, right, left);
-  } @else {
-    @return $value;
+  @if $direction == rtl and map-has-key($direction-values, $value) {
+    @return map-get($direction-values, $value);
   }
+  
+  @return $value;
 }
 
 @function direction-sides($values) {
   @if $direction == rtl and length($values) == 4 {
     @return nth($values, 1) nth($values, 4) nth($values, 3) nth($values, 2);
-  } @else {
-    @return $values;
   }
+  
+  @return $values;
 }
 
 @function direction-corners($values) {
@@ -25,9 +35,9 @@ $direction: ltr !default;
     } @else {
       @return nth($values, 2) nth($values, 1) nth($values, 4) nth($values, 3);
     }
-  } @else {
-    @return $values;
   }
+  
+  @return $values;
 }
 
 @function direction-if($condition, $if, $else: null) {
