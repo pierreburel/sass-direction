@@ -1,20 +1,16 @@
 $direction: ltr !default;
 $direction-values: (
-  ltr: rtl, 
+  ltr: rtl,
   rtl: ltr,
   left: right,
-  right: left,
-  flex-start: flex-end,
-  flex-end: flex-start,
-  row: row-reverse,
-  row-reverse: row
+  right: left
 ) !default;
 
 @function direction($value) {
   @if $direction == rtl and map-has-key($direction-values, $value) {
     @return map-get($direction-values, $value);
   }
-  
+
   @return $value;
 }
 
@@ -22,7 +18,7 @@ $direction-values: (
   @if $direction == rtl and length($values) == 4 {
     @return nth($values, 1) nth($values, 4) nth($values, 3) nth($values, 2);
   }
-  
+
   @return $values;
 }
 
@@ -36,7 +32,7 @@ $direction-values: (
       @return nth($values, 2) nth($values, 1) nth($values, 4) nth($values, 3);
     }
   }
-  
+
   @return $values;
 }
 

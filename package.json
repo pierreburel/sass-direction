@@ -1,6 +1,6 @@
 {
   "name": "sass-direction",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Sass mixins and functions to help creating bi-directional stylesheets.",
   "keywords": [
     "sass",

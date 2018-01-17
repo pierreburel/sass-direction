@@ -2,9 +2,9 @@
 
 Sass mixins and functions to help creating bi-directional stylesheets.  
 
-Compatibility: [Sass](https://github.com/sass/sass) and [LibSass](https://github.com/sass/libsass) 
+Compatibility: [Sass](https://github.com/sass/sass) and [LibSass](https://github.com/sass/libsass)
 
---- 
+---
 
 ## Install
 
@@ -38,23 +38,21 @@ h1 {
   border: direction-corners(1em 2em 3em 4em);
   font-size: direction-if(ltr, 1em, 2em);
   line-height: direction-if(rtl, 2);
-  flex-direction: direction(row);
-  justify-content: direction(flex-start);
-  
+
   @include direction-if(ltr) {
     &::before {
       content: "left to right";
     }
   }
-  
+
   @include direction-if(rtl) {
     &::after {
       content: "right to left";
     }
   }
-  
+
   direction: direction(rtl);
-  
+
   & > span {
     direction: direction(ltr);
   }
@@ -81,8 +79,6 @@ h1 {
   padding: 1em 2em 3em 4em;
   border: 1em 2em 3em 4em;
   font-size: 1em;
-  flex-direction: row;
-  justify-content: flex-start;
   direction: rtl;
 }
 h1::before {
@@ -104,8 +100,6 @@ h1 {
   border: 2em 1em 4em 3em;
   font-size: 2em;
   line-height: 2;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
   direction: ltr;
 }
 h1::after {
@@ -125,7 +119,7 @@ h1 > span {
 - Mixin `direction-ltr`: `direction-if(ltr)`
 - Mixin `direction-rtl`: `direction-if(rtl)`
 
---- 
+---
 
 ## Credits
 
